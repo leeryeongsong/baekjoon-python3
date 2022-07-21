@@ -1,0 +1,12 @@
+n = int(input())
+
+level = []
+for _ in range(n):
+    level.append(int(input()))
+total = 0
+
+for i in range(n-2, -1, -1):
+    if level[i] >= level[i+1]:
+        total += level[i] - level[i+1] + 1
+        level[i] = level[i+1] - 1
+print(total)
